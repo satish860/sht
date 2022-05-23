@@ -1,0 +1,51 @@
+﻿========== Checking for Container Prerequisites ==========
+Verifying that Docker Desktop is installed...
+Docker Desktop is installed.
+========== Verifying that Docker Desktop is running... ==========
+Verifying that Docker Desktop is running...
+Docker Desktop is running.
+========== Verifying Docker OS ==========
+Verifying that Docker Desktop's operating system mode matches the project's target operating system...
+Docker Desktop's operating system mode matches the project's target operating system.
+========== Pulling Required Images ==========
+Checking for missing Docker images...
+Pulling Docker images. To cancel this download, close the command prompt window.
+docker pull mcr.microsoft.com/dotnet/aspnet:6.0
+Docker images are ready.
+========== Warming up container(s) for UrlShortner.Web ==========
+Starting up container(s)...
+docker build -f "C:\Github\sht\src\UrlShortner.Web\Dockerfile" --force-rm -t urlshortnerweb:dev --target base  --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=UrlShortner.Web" "C:\Github\sht" 
+#1 [internal] load build definition from Dockerfile
+#1 sha256:81d51589d7f57363889bede9f1e75b9a29b337e4233d35abd6d62c226358af67
+#1 transferring dockerfile: 796B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:eebfad8bdde9a609f7a95f025bef46311e7c0709bee6192a8d45923e52a02915
+#2 transferring context: 382B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for mcr.microsoft.com/dotnet/aspnet:6.0
+#3 sha256:ac4494cbca04ddb415c76edcbcc7688784c2a6ea65dd656286c013738aa3b75f
+#3 DONE 0.0s
+
+#4 [base 1/2] FROM mcr.microsoft.com/dotnet/aspnet:6.0
+#4 sha256:50f1ddc10932c4a74c7af5704e931a9489c710faea4f2381fe2380827a900e00
+#4 DONE 0.1s
+
+#5 [base 2/2] WORKDIR /app
+#5 sha256:bc3cf6c390e5fe0e66017b4845c8fcf3e56c7adac9f514a00c2c986024f377a4
+#5 DONE 0.1s
+
+#6 exporting to image
+#6 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#6 exporting layers 0.0s done
+#6 writing image sha256:fba02d623a76ffbd240978d3f9ebe703755a99648ab6cfb4a98004eb17732620 done
+#6 naming to docker.io/library/urlshortnerweb:dev done
+#6 DONE 0.1s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -NonInteractive -NoProfile -WindowStyle Hidden -ExecutionPolicy RemoteSigned -File "C:\Users\svenkatakris\AppData\Local\Temp\GetVsDbg.ps1" -Version vs2017u5 -RuntimeID linux-x64 -InstallPath "C:\Users\svenkatakris\vsdbg\vs2017u5"
+Info: Using vsdbg version '17.2.10518.1'
+Info: Using Runtime ID 'linux-x64'
+Info: C:\Users\svenkatakris\vsdbg\vs2017u5 exists, deleting.
