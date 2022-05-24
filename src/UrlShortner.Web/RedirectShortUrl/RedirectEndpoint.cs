@@ -25,6 +25,7 @@ namespace UrlShortner.Web.RedirectShortUrl
             {
                 await SendNotFoundAsync(ct);
             }
+            else
             await SendRedirectAsync(result.Value.Url, isPermanant: true);
         }
     }
