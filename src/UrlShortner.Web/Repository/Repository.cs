@@ -20,9 +20,16 @@ namespace UrlShortner.Web.Repository
             return condition.LastUpdateTime.HasValue ? Result.Success() : Result.Failure("Database Save failed");
         }
 
-        public Task<Result<ShortUrl>> GetShortUrl(string shortCode)
+        public async Task<Result<ShortUrl>> GetShortUrl(string shortCode)
         {
-            throw new NotImplementedException();
+            DocumentReference doc = this.Collection.Document(shortCode);
+            var snapshot = await doc.GetSnapshotAsync();
+            if(snapshot.Exists)
+            {
+                var ShortUrl = snapshot.ConvertTo<ShortUrl>();
+                return Result.Success<ShortUrl>(ShortUrl);
+            }
+            return Result.Failure<ShortUrl>("Short url doesnt exist");
         }
     }
 }
